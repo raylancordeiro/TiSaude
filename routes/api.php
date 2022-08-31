@@ -52,3 +52,10 @@ Route::controller(\App\Http\Controllers\PacienteController::class)->group(functi
     Route::post('paciente', "store");
     Route::delete('paciente/{id}', "destroy");
 });
+
+Route::controller(\App\Http\Controllers\ProcedimentoController::class)->group(function () {
+    Route::get('procedimento', "index");
+    Route::get('procedimento/{id}', "show");
+    Route::post('procedimento', "store");
+    Route::delete('procedimento/{id}', "destroy");
+});

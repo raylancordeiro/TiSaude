@@ -56,5 +56,13 @@ class DatabaseSeeder extends Seeder
             'created_at' => new \DateTime('now'),
             'updated_at' => new \DateTime('now')
         ]);
+
+        DB::table('procedimentos')->insert([
+            'proc_codigo' => 1234,
+            'proc_nome' => 'Raio X',
+            'proc_valor' => 157.98,
+            'created_at' => new \DateTime('now'),
+            'updated_at' => new \DateTime('now')
+        ]);
     }
 }
