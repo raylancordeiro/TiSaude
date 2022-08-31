@@ -16,7 +16,7 @@ class CreateProcedimentosTable extends Migration
         Schema::create('procedimentos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('proc_codigo');
+            $table->string('proc_codigo')->unique();
             $table->string('proc_nome');
             $table->double('proc_valor');
         });

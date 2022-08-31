@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-
+        $now = new \DateTime('now');
         DB::table('users')->insert([
             'name' => 'admin',
             'email' => 'admin@tisaude.com',
@@ -62,6 +62,18 @@ class DatabaseSeeder extends Seeder
             'proc_codigo' => 1234,
             'proc_nome' => 'Raio X',
             'proc_valor' => 157.98,
+            'created_at' => new \DateTime('now'),
+            'updated_at' => new \DateTime('now')
+        ]);
+
+        DB::table('consultas')->insert([
+            'cons_codigo' => 1234,
+            'data' => $now->format('Y-m-d'),
+            'hora' => $now->format('H:i'),
+            'particular' => true,
+            'cons_med' => 1234,
+            'cons_proc' => 1234,
+            'cons_pac' => 1234,
             'created_at' => new \DateTime('now'),
             'updated_at' => new \DateTime('now')
         ]);

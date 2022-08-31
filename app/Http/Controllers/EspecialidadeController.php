@@ -8,9 +8,14 @@ use App\Models\Especialidade;
 use \Illuminate\Http\Response;
 use Symfony\Component\HttpFoundation\Response as ResponseSymfony;
 
-
 class EspecialidadeController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
+
     /**
      * Display a listing of the resource.
      *

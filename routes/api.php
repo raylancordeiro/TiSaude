@@ -19,7 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 //TODO: AUTENTICAR TODAS AS ROTAS
 Route::controller(\App\Http\Controllers\AuthController::class)->group(function () {
-    Route::post('login', 'login');
+    Route::post('login', [ 'as' => 'login', 'uses' => '\App\Http\Controllers\AuthController@login']);
     Route::post('register', 'register');
     Route::post('logout', 'logout');
     Route::post('refresh', 'refresh');
@@ -58,4 +58,11 @@ Route::controller(\App\Http\Controllers\ProcedimentoController::class)->group(fu
     Route::get('procedimento/{id}', "show");
     Route::post('procedimento', "store");
     Route::delete('procedimento/{id}', "destroy");
+});
+
+Route::controller(\App\Http\Controllers\ConsultaController::class)->group(function () {
+    Route::get('consulta', "index");
+    Route::get('consulta/{consulta}', "show");
+    Route::post('consulta', "store");
+    Route::delete('consulta/{id}', "destroy");
 });

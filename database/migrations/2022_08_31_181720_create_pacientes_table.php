@@ -16,7 +16,7 @@ class CreatePacientesTable extends Migration
         Schema::create('pacientes', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('pac_codigo');
+            $table->string('pac_codigo')->unique();
             $table->string('pac_nome');
             $table->string('pac_telefones');
             $table->timestamp('pac_dataNascimento');
