@@ -18,12 +18,18 @@ class Medico extends Model
         'med_nome'
     ];
 
-    public function create(string $medCodigo, string $medCRM, string $medNome): Medico
+    public function create(string $medCodigo, string $medCRM, string $medNome, string $med_espec): Medico
     {
         $this->med_codigo = $medCodigo;
         $this->med_CRM = $medCRM;
         $this->med_nome = $medNome;
+        $this->med_espec = $med_espec;
 
         return $this;
+    }
+
+    public function especialidade()
+    {
+        return $this->hasOne(Especialidade::class, 'med_espec', 'med_codigo');
     }
 }

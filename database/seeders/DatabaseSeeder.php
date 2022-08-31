@@ -25,17 +25,18 @@ class DatabaseSeeder extends Seeder
             'updated_at' => new \DateTime('now')
         ]);
 
-        DB::table('medicos')->insert([
-            'med_codigo' => 1234,
-            'med_CRM' => 'CRM-1234',
-            'med_nome' => 'Drauzio Varella',
+        DB::table('especialidades')->insert([
+            'espec_codigp' => 1234,
+            'espec_nome' => 'Dermatologista',
             'created_at' => new \DateTime('now'),
             'updated_at' => new \DateTime('now')
         ]);
 
-        DB::table('especialidades')->insert([
-            'espec_codigp' => 1234,
-            'espec_nome' => 'Dermatologista',
+        DB::table('medicos')->insert([
+            'med_codigo' => 1234,
+            'med_CRM' => 'CRM-1234',
+            'med_nome' => 'Drauzio Varella',
+            'med_espec' => 1234,
             'created_at' => new \DateTime('now'),
             'updated_at' => new \DateTime('now')
         ]);

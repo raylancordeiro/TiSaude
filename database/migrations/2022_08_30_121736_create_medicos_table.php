@@ -19,6 +19,9 @@ class CreateMedicosTable extends Migration
             $table->string("med_codigo")->unique();
             $table->string("med_CRM")->unique();
             $table->string("med_nome");
+            $table->string("med_espec")->default(1234);
+
+            $table->foreign('med_espec')->references('espec_codigp')->on('especialidades');
         });
     }
 

@@ -28,7 +28,8 @@ class StoreMedicoRequest extends FormRequest
         return [
             'med_codigo' => 'required|unique:medicos',
             'med_CRM' => 'required|unique:medicos',
-            'med_nome' => 'required'
+            'med_nome' => 'required',
+            'med_espec' => 'required'
         ];
     }
 
@@ -43,6 +44,7 @@ class StoreMedicoRequest extends FormRequest
             'med_codigo.required' => 'A med_codigo is required',
             'med_CRM.required' => 'A med_CRM is required',
             'med_nome.required' => 'A med_nome is required',
+            'med_espec.required' => 'A med_espec is required',
             'med_codigo.unique' => 'A med_codigo already exists',
             'med_CRM.unique' => 'A med_CRM already exists',
         ];

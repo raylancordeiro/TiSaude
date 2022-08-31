@@ -24,4 +24,9 @@ class Especialidade extends Model
 
         return $this;
     }
+
+    public function medico()
+    {
+        return $this->belongsTo(Medico::class, 'med_espec', 'espec_codigp');
+    }
 }

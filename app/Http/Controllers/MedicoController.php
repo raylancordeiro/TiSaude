@@ -57,7 +57,8 @@ class MedicoController extends Controller
         $medico->create(
             $request->med_codigo,
             $request->med_CRM,
-            $request->med_nome
+            $request->med_nome,
+            $request->med_espec
         );
 
         $medico->save();
@@ -76,6 +77,8 @@ class MedicoController extends Controller
         if (!Medico::where('id', $id)->exists()) {
             return new Response(['message'=> "Medico not found"], ResponseSymfony::HTTP_NOT_FOUND);
         }
+
+        /** @var Medico $medico */
         $medico = Medico::find($id);
 
         return new Response($medico);
