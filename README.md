@@ -13,11 +13,13 @@ Esta aplicação foi criada para um processo seletivo.
 
 ### Get Started
 
-Para buildar a aplicação usei o Laravel [sail](https://laravel.com/docs/9.x/sail#introduction) que facilita a utilização dos dockers containers. Recomendo criar um alias caso queira rodar comandos `artisan`.
+Para buildar a aplicação usei o Laravel [sail](https://laravel.com/docs/9.x/sail#introduction) que facilita a utilização dos dockers containers. Recomendo criar um alias.
 #### Gerando alias:
 `alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'`
 
 Após gerar o alias, vc pode subir o container com a seguinte sintaxe:
 `sail up`
-Caso não tenha criado o alias, toda vez que desejar subir o container ou executar algum comando artisan dentro do container a sintaxe usada deve ser `./vendor/bin/sail up`
+Caso não tenha criado o alias, toda vez que desejar subir o container ou executar algum comando artisan dentro do container a sintaxe usada deve ser `./vendor/bin/sail up`. A mesma lógica de syntaxe deve ser usada caso queira usar algum comando `artisan` dentro do container.
+
+A documentação da api está nesta [collection](Insomnia_collection.json) do Insomnia. Para importar você precisará criar uma nova collection request no insomnia em seguida clicar em `Import/Export`. Na aba Data, você precisará selecionar o arquivo através do botão `Import Data`.
 
